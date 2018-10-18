@@ -2,6 +2,8 @@ package games;
 
 import java.util.Scanner;
 
+import main.Wallet;
+
 public class BlackJack {
 
 public static void blackJackGame() {
@@ -16,7 +18,14 @@ public static void blackJackGame() {
 	int compTotal = 0;
 	int compPoints = 0;
 	int whoWins = 0;
-	
+	int bet = 0;
+	int winnings = 0;
+	int endMoney = 0;
+	System.out.println("Please enter a bet >> ");
+	bet = input.nextInt();
+	if (bet > Wallet.moneyAmount(bet, winnings)) {
+		System.out.println("Insufficient funds.");
+		}
 	String cardName = null;
 	
 	while(whoWins == 0) {
@@ -98,7 +107,6 @@ public static void blackJackGame() {
 	totalPoints = numCount;
 	if(totalPoints == 21) {
 		System.out.println("You have a blackjack");
-		whoWins = 1;
 	}
 	System.out.println("Do you want another card 1 - yes 2 - no ");
 	hit = input.nextInt();
@@ -271,11 +279,19 @@ public static void blackJackGame() {
 		whoWins = 2;
 	}
 	}
+	if(whoWins == 1) {
+		System.out.println("\nYou won " + (winnings * 2) + " dollars.");
+		}
+		else if(whoWins != 1) {
+			System.out.println("\nYou lost " + (bet * 2) + " dollars.");
+		}
+	Wallet.endMoney(bet, winnings, endMoney);
+	}
 	}
 	}
 	
 	}
-}
+
 
 
 
