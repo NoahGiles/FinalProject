@@ -28,9 +28,9 @@ public class casinoMain {
 		do {
 		System.out.println("\nPlease choose a game : (1) Blackjack (2) Roulette (3) Slot Machine");
 		gameChoice = input.nextInt();
-//		if(gameChoice == 1) {
-//		BlackJack.blackJackGame();
-//		}
+		if(gameChoice == 1) {
+		BlackJack.blackJackGame();
+		}
 //		else if(gameChoice == 2) {
 //		
 //		}
