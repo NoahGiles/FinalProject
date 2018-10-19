@@ -1,17 +1,17 @@
 package games;
-
+import java.util.Scanner;
 
 public class Roulette {
 
-import java.util.Scanner;
-
-import java.util.Random;
 
 	
 	public static void roulette() {
+		
+
 	// TODO Auto-generated method stub
 		System.out.println("Welcome to the Roulette Game");
 		int userGuess;
+		int[] numbers = new int[36];
 		int computerSecret;
 		int userChoice;
 		int userPick;
@@ -27,8 +27,8 @@ import java.util.Random;
 		
 		do
 		{
-
-			computerSecret = (int)(Math.random() * 36);
+			
+			computerSecret = (int)(Math.random() * numbers.length);
 			System.out.println("How much money are you betting:");
 			money = input.nextInt();
 		System.out.println("Pick any number from 0 to 36:");

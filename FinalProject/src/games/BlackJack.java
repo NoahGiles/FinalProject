@@ -12,7 +12,7 @@ public static void blackJackGame() {
 	int points = 0;
 	int numCount = 0;
 	int totalPoints = 0;
-	int hit = 0;
+	int hit;
 	int drawComp = 0;
 	int compTotal = 0;
 	int compPoints = 0;
@@ -20,7 +20,6 @@ public static void blackJackGame() {
 	int bet = 0;
 	int winnings = 0;
 	int endMoney = 0;
-	int exceeding = 0;
 	winnings = bet * 2;
 	System.out.println("Please enter a bet >> ");
 	bet = input.nextInt();
@@ -30,7 +29,7 @@ public static void blackJackGame() {
 	String cardName = null;
 	
 	while(whoWins == 0) {
-	System.out.println("\nInitial draw:\n");
+	System.out.println();
 	for (int count = 0; count < 2; count++) {
 	drawCard = (int)(Math.random() * 13 + 1);
 	switch (drawCard) {
@@ -109,11 +108,8 @@ public static void blackJackGame() {
 	if(totalPoints == 21) {
 		System.out.println("You have a blackjack");
 	}
-	while(totalPoints != 21 && exceeding < 1) {
-	
 	System.out.println("Do you want another card (1) Yes (2) No");
 	hit = input.nextInt();
-	exceeding = (exceeding + 1);
 	if(hit == 1) {
 	drawCard = (int)(Math.random() * 13 + 1);
 	switch (drawCard) {
@@ -187,7 +183,6 @@ public static void blackJackGame() {
 		break;
 		}
 	}
-	
 	totalPoints = numCount;
 	if(hit == 1) {
 		System.out.println(numCount + " " + cardName);
@@ -203,75 +198,77 @@ public static void blackJackGame() {
 	switch (drawComp) {
 	case 1:
 		cardName = "Ace";
-		compPoints = 11;
+
+		points = 11;
 		compTotal = compTotal + 11;
 		break;
 	case 2:
 		cardName = "Two";
-		compPoints = 2;
+		points = 2;
 		compTotal = compTotal + 2;
 		break;
 	case 3:
 		cardName = "Three";
-		compPoints = 3;
+		points = 3;
 		compTotal = compTotal + 3;
 		break;
 	case 4: 
 		cardName = "Four";
-		compPoints = 4;
+		points = 4;
 		compTotal = compTotal + 4;
 		break;
 	case 5:
 		cardName = "Five";
-		compPoints = 5;
+		points = 5;
 		compTotal = compTotal + 5;
 		break;
 	case 6: 
 		cardName = "Six";
-		compPoints = 6;
+		points = 6;
 		compTotal = compTotal + 6;
 		break;
 	case 7:
 		cardName = "Seven";
-		compPoints = 7;
+		points = 7;
 		compTotal = compTotal + 7;
 		break;
 	case 8:
 		cardName = "Eight";
-		compPoints = 8;
+		points = 8;
 		compTotal = compTotal + 8;
 		break;
 	case 9:
 		cardName = "Nine";
-		compPoints = 9;
+		points = 9;
 		compTotal = compTotal + 9;
 		break;
 	case 10:
 		cardName = "Ten";
-		compPoints = 10;
+		points = 10;
 		compTotal = compTotal + 10;
 		break;
 	case 11:
 		cardName = "Jack";
-		compPoints = 10;
+		points = 10;
 		compTotal = compTotal + 10;
 		break;
 	case 12:
 		cardName = "Queen";
-		compPoints = 10;
+		points = 10;
 		compTotal = compTotal + 10;
 		break;
 	case 13:
 		cardName = "King";
-		compPoints = 10;
+		points = 10;
 		compTotal = compTotal + 10;
 		break;
 	default:
-		compPoints = 1000;
+		points = 1000;
 		break;
 		}
-	}
-	System.out.println(compTotal + " " + cardName);
+	compPoints = compTotal;
+	
+	System.out.println(compPoints + " " + cardName);
 	
 	if(compPoints > 21 && totalPoints <= 21) {
 		System.out.println("Player wins!");
@@ -284,10 +281,10 @@ public static void blackJackGame() {
 		whoWins = 2;
 	}
 	
-	if(whoWins == 1 || compPoints > 21) {
+	if(whoWins == 1) {
 		System.out.println("\nYou won " + winnings + " dollars.");
 		}
-		else if(whoWins != 1 || compPoints == 21) {
+		else if(whoWins != 1) {
 			System.out.println("\nYou lost " + bet + " dollars.");
 		}
 	Wallet.endMoney(bet, winnings, endMoney);
