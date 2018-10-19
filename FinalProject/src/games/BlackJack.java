@@ -9,7 +9,6 @@ public class BlackJack {
 public static void blackJackGame() {
 	Scanner input = new Scanner(System.in);
 	int drawCard = 0;
-	int aces = 0;
 	int points = 0;
 	int numCount = 0;
 	int totalPoints = 0;
@@ -21,6 +20,7 @@ public static void blackJackGame() {
 	int bet = 0;
 	int winnings = 0;
 	int endMoney = 0;
+	winnings = bet * 2;
 	System.out.println("Please enter a bet >> ");
 	bet = input.nextInt();
 	if (bet > Wallet.moneyAmount(bet, winnings)) {
@@ -34,7 +34,6 @@ public static void blackJackGame() {
 	switch (drawCard) {
 	case 1:
 		cardName = "Ace";
-		aces = +1;
 		points = 11;
 		numCount = numCount + 11;
 		break;
@@ -108,14 +107,13 @@ public static void blackJackGame() {
 	if(totalPoints == 21) {
 		System.out.println("You have a blackjack");
 	}
-	System.out.println("Do you want another card 1 - yes 2 - no ");
+	System.out.println("Do you want another card (1) Yes (2) No");
 	hit = input.nextInt();
 	if(hit == 1) {
 	drawCard = (int)(Math.random() * 13 + 1);
 	switch (drawCard) {
 	case 1:
 		cardName = "Ace";
-		aces = +1;
 		points = 11;
 		numCount = numCount + 11;
 		break;
@@ -193,12 +191,13 @@ public static void blackJackGame() {
 		whoWins = 2;
 	}
 	if (whoWins != 2) {
+	System.out.println("\nDealer draw:");
 	while(compPoints < totalPoints) {
 	drawComp = (int)(Math.random() * 13 + 1);
 	switch (drawComp) {
 	case 1:
 		cardName = "Ace";
-		aces = +1;
+
 		points = 11;
 		compTotal = compTotal + 11;
 		break;
@@ -270,27 +269,28 @@ public static void blackJackGame() {
 	
 	System.out.println(compPoints + " " + cardName);
 	
-	if(compPoints > 21) {
+	if(compPoints > 21 && totalPoints <= 21) {
 		System.out.println("Player wins!");
 		whoWins = 1;
+	}
+	}
 	}
 	if(compPoints > totalPoints && compPoints <= 21) {
 		System.out.println("Dealer wins!");
 		whoWins = 2;
 	}
-	}
+	
 	if(whoWins == 1) {
-		System.out.println("\nYou won " + (winnings * 2) + " dollars.");
+		System.out.println("\nYou won " + winnings + " dollars.");
 		}
 		else if(whoWins != 1) {
-			System.out.println("\nYou lost " + (bet * 2) + " dollars.");
+			System.out.println("\nYou lost " + bet + " dollars.");
 		}
 	Wallet.endMoney(bet, winnings, endMoney);
 	}
 	}
 	}
-	
-	}
+
 
 
 

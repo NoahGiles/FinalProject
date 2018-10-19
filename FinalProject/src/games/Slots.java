@@ -114,13 +114,13 @@ public class Slots {
 																									}
 																									else if(ran7 != 7) {
 																										if(count == 0) {
-																											number = 1;
+																											number =  (int) (Math.random() * 7 + 1);
 																											}
 																											else if(count == 1) {
-																											number2 = 2;
+																											number2 =  (int) (Math.random() * 7 + 1);
 																											}
 																											else if(count == 2) {
-																											number3 = 3;
+																											number3 =  (int) (Math.random() * 7 + 1);
 																											}
 																										}
 																									}
@@ -203,7 +203,7 @@ public class Slots {
 		if(number == number2 && number == number3) {
 		System.out.println("\nYou won " + winnings + " dollars.");
 		}
-		else if(number != number2) {
+		else if(number != number2 || number2 != number3 || number != number3) {
 			System.out.println("\nYou lost " + bet + " dollars.");
 		}
 		
