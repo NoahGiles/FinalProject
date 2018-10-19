@@ -1,10 +1,12 @@
 package games;
 
+
+public class Roulette {
+
 import java.util.Scanner;
 
 import java.util.Random;
 
-public class roulette {
 	
 	public static void roulette() {
 	// TODO Auto-generated method stub
