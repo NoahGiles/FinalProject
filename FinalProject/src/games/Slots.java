@@ -11,7 +11,7 @@ public class Slots {
 		int number2 = 0;
 		int number3 = 0;
 		System.out.println("How much would you like to bet?");
-//		Chances should be: (1/2) + (1/4)+ (1/8) + (1/20) + (1/24) + (1/32) + (1/480)
+//		Chances should be: (1/2) + (1/4)+ (1/8) + (1/20) + (1/24) + (1/32) + (1/480) if it reaches 7 and does not equal 7, the output is 1,2,3
 		for(int count = 0; count < 3; count++) {
 		for(int i = 0; i < 1; i++) {
 			int ran = (int) (Math.random() * 2 + 1);
@@ -114,13 +114,13 @@ public class Slots {
 																									}
 																									else if(ran7 != 7) {
 																										if(count == 0) {
-																											number =  (int) (Math.random() * 7 + 1);
+																											number = 1;
 																											}
 																											else if(count == 1) {
-																											number2 =  (int) (Math.random() * 7 + 1);
+																											number2 = 2;
 																											}
 																											else if(count == 2) {
-																											number3 =  (int) (Math.random() * 7 + 1);
+																											number3 =  3;
 																											}
 																										}
 																									}
