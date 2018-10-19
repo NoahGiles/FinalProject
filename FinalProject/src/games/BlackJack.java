@@ -20,12 +20,13 @@ public static void blackJackGame() {
 	int bet = 0;
 	int winnings = 0;
 	int endMoney = 0;
-	winnings = bet * 2;
+	do {
 	System.out.println("Please enter a bet >> ");
 	bet = input.nextInt();
 	if (bet > Wallet.moneyAmount(bet, winnings)) {
 		System.out.println("Insufficient funds.");
 		}
+	else if (bet <= Wallet.moneyAmount(bet, winnings)) {
 	String cardName = null;
 	
 	while(whoWins == 0) {
@@ -104,10 +105,13 @@ public static void blackJackGame() {
 	}
 	System.out.println(numCount + " " + cardName);
 	}
+	
 	totalPoints = numCount;
 	if(totalPoints == 21) {
 		System.out.println("You have a blackjack");
+		whoWins = 1;
 	}
+	else if(totalPoints != 21) {
 	System.out.println("Do you want another card (1) Yes (2) No");
 	hit = input.nextInt();
 	if(hit == 1) {
@@ -280,15 +284,20 @@ public static void blackJackGame() {
 		System.out.println("Dealer wins!");
 		whoWins = 2;
 	}
+	}
 	
 	if(whoWins == 1) {
+		winnings = bet * 2;
 		System.out.println("\nYou won " + winnings + " dollars.");
 		}
 		else if(whoWins != 1) {
 			System.out.println("\nYou lost " + bet + " dollars.");
 		}
 	Wallet.endMoney(bet, winnings, endMoney);
+	bet = 0;
 	}
+	}
+	}while(bet > Wallet.moneyAmount(bet, winnings));
 	}
 	}
 

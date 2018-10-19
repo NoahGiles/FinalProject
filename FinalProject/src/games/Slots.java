@@ -146,6 +146,7 @@ public class Slots {
 		int winnings = 0;
 		int runCount = 0;
 		int endMoney = 100;
+		do {
 		System.out.println("Please enter a bet >> ");
 		Scanner input = new Scanner(System.in);
 		bet = input.nextInt();
@@ -175,10 +176,12 @@ public class Slots {
 			else if(number != number2) {
 			}
 		}
+			
 			Wallet.moneyAmount(bet, winnings);
 		if (bet > Wallet.moneyAmount(bet, winnings)) {
 		System.out.println("Insufficient funds.");
 		}
+		else if(bet <= Wallet.moneyAmount(bet, winnings)) {
 		while(bet <= Wallet.moneyAmount(bet, winnings) && runCount == 0) {
 		for(runCount = 0; runCount < 1; runCount++) {
 		System.out.println("\n              000000000000000000000     0000000000000000000000000000000000000");
@@ -204,12 +207,15 @@ public class Slots {
 		System.out.println("\nYou won " + winnings + " dollars.");
 		}
 		else if(number != number2 || number2 != number3 || number != number3) {
-			System.out.println("\nYou lost " + bet + " dollars.");
+		System.out.println("\nYou lost " + bet + " dollars.");	
 		}
-		
 		Wallet.endMoney(bet, winnings, endMoney);
+		bet = 0;
+		
 		}
-		}		
+		}	
+		}
+		}while (bet > Wallet.moneyAmount(bet, winnings));
 	}
 }
 
