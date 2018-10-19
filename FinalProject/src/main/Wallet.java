@@ -23,7 +23,7 @@ public class Wallet {
 		public static void endMoney(int bet, int winnings, int endMoney) {
 			endMoney = (money - bet) + winnings;
 			money = (0 + endMoney);
-			System.out.println("\nYou have " + money + " dollars.");
+			System.out.println("\nYou have " + endMoney + " dollars.");
 
 		}
 	}
