@@ -25,7 +25,7 @@ public class Roulette {
 		String result = null;
 		
 		Scanner input = new Scanner(System.in);
-		
+		//Code asks for the bet and whether or not the player wants to bet a color or number.
 		do
 		{
 			
@@ -91,11 +91,11 @@ public class Roulette {
 		
 		//Code checks for the number choice twice for incorrect or correct, and the color choice 4 times for even, odd, black, and red.
 		if(numberChoice == computerSecret) {
-			winnings = (bet * 2);
+			winnings = (bet * 20);
 			System.out.println("\nYou won " + winnings + " dollars.");
 		}
 		else if(colorChoice == 1 && computerSecret % 2 != 0) {
-			winnings = (bet * 20);
+			winnings = (bet * 2);
 			System.out.println("\nYou won " + winnings + " dollars.");
 		}
 		else if(colorChoice == 2 && computerSecret % 2 == 0) {
@@ -110,7 +110,7 @@ public class Roulette {
 		}
 		else if(colorChoice == 2 && computerSecret % 2 != 0) {
 				System.out.println("\nYou won " + winnings + " dollars.");
-				
+			//The player is given the amount of money stored in the wallet.
 			}
 				System.out.println("You have " + endMoney);
 				Wallet.endMoney(bet, winnings, endMoney);
