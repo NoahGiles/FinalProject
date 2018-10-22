@@ -91,11 +91,11 @@ public class Roulette {
 		
 		//Code checks for the number choice twice for incorrect or correct, and the color choice 4 times for even, odd, black, and red.
 		if(numberChoice == computerSecret) {
-			winnings = (bet * 2);
+			winnings = (bet * 20);
 			System.out.println("\nYou won " + winnings + " dollars.");
 		}
 		else if(colorChoice == 1 && computerSecret % 2 != 0) {
-			winnings = (bet * 20);
+			winnings = (bet * 2);
 			System.out.println("\nYou won " + winnings + " dollars.");
 		}
 		else if(colorChoice == 2 && computerSecret % 2 == 0) {
