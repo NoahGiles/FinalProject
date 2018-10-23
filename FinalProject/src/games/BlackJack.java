@@ -28,7 +28,7 @@ public static void blackJackGame() {
 		}
 	else if (bet <= Wallet.moneyAmount(bet, winnings)) {
 	String cardName = null;
-	
+	//Game draws two cards
 	while(whoWins == 0) {
 	System.out.println();
 	for (int count = 0; count < 2; count++) {
@@ -105,12 +105,13 @@ public static void blackJackGame() {
 	}
 	System.out.println(numCount + " " + cardName);
 	}
-	
+	//If the two first cards equal 21, the game tells the player and the game stops.
 	totalPoints = numCount;
 	if(totalPoints == 21) {
 		System.out.println("You have a blackjack");
 		whoWins = 1;
 	}
+	//Game prompts the player for a third card.
 	else if(totalPoints != 21) {
 	System.out.println("Do you want another card (1) Yes (2) No");
 	hit = input.nextInt();
@@ -194,6 +195,7 @@ public static void blackJackGame() {
 	if(totalPoints > 21) {
 		System.out.println("You Lose!");
 		whoWins = 2;
+	//The 'dealer' draws cards until it has more than the player. If these cards are greater than the player and less than 21, the dealer wins. Otherwise, they lose.
 	}
 	if (whoWins != 2) {
 	System.out.println("\nDealer draw:\n");
@@ -271,7 +273,7 @@ public static void blackJackGame() {
 		break;
 		}
 	compPoints = compTotal;
-	
+	//The game registers if the player has 21 or greater than the computer, while being less than 21.
 	System.out.println(compPoints + " " + cardName);
 	
 	if(compPoints > 21 && totalPoints <= 21) {
@@ -285,7 +287,7 @@ public static void blackJackGame() {
 		whoWins = 2;
 	}
 	}
-	
+	//The money won or lost is displayed, and the player is given the amount of money stored in the wallet.
 	if(whoWins == 1) {
 		winnings = bet * 2;
 		System.out.println("\nYou won " + winnings + " dollars.");
@@ -300,25 +302,3 @@ public static void blackJackGame() {
 	}while(bet > Wallet.moneyAmount(bet, winnings));
 	}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
