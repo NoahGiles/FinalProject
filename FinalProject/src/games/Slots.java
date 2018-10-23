@@ -150,7 +150,7 @@ public class Slots {
 		System.out.println("Please enter a bet >> ");
 		Scanner input = new Scanner(System.in);
 		bet = input.nextInt();
-		
+		//The game looks for matching numbers and changes the winnings accordingly.
 			if(number == number2 && number2 == number3 && number == number3) {
 			if(number == 1 && number2 == 1 && number == 1) {
 				winnings = bet * 10;
@@ -176,11 +176,12 @@ public class Slots {
 			else if(number != number2) {
 			}
 		}
-			
+		
 			Wallet.moneyAmount(bet, winnings);
 		if (bet > Wallet.moneyAmount(bet, winnings)) {
 		System.out.println("Insufficient funds.");
 		}
+		//The slot machine is shown, as well as the legend for sets of numbers.
 		else if(bet <= Wallet.moneyAmount(bet, winnings)) {
 		while(bet <= Wallet.moneyAmount(bet, winnings) && runCount == 0) {
 		for(runCount = 0; runCount < 1; runCount++) {
@@ -202,7 +203,7 @@ public class Slots {
 		System.out.println("    00000000000000000000       0     ");
 		System.out.println("    00000000000000000000     0       ");
 		System.out.println("    000000000000000000000000         ");
-		
+		//The money won or lost is displayed, and the player is given the amount of money stored in the wallet.
 		if(number == number2 && number == number3) {
 		System.out.println("\nYou won " + winnings + " dollars.");
 		}
