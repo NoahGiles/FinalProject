@@ -20,7 +20,7 @@ public class Wallet {
 		
 			
 		}
-		//Calculation is done
+		//Calculation is done (used in every game for the betting system)
 		public static void endMoney(int bet, int winnings, int endMoney) {
 			endMoney = (money - bet) + winnings;
 			money = (0 + endMoney);
