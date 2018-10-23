@@ -112,13 +112,12 @@ public class Roulette {
 				System.out.println("\nYou won " + winnings + " dollars.");
 				
 			}
-				System.out.println("You have " + endMoney);
 				Wallet.endMoney(bet, winnings, endMoney);
-				bet = 0;
+				
 			}
 			
-			
-		}while (userChoice != 1 || userChoice != 2 && bet <= Wallet.moneyAmount(bet, winnings));
+			bet = 1000;
+		}while (bet <= Wallet.moneyAmount(bet, winnings));
 	}
 }
 
