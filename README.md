@@ -1,3 +1,4 @@
+
 # Casino Games
 
 # Table of Contents
@@ -28,3 +29,6 @@ Roulette : The player is given a choice of what to bet on, whether it be color o
 Slots : After the player bets, three numbers between 1 and 7 are selected randomly. Chances for getting higher numbers get lower each time they are not selected, that being 1 (1 in 2), 2 (1 in 4), 3 (1 in 8), 4 (1 in 20), 5 (1 in 24), 6 (1 in 32), and 7 (1 in 480). If the number generator reaches 7 and is not 7, the output is 1 (on the first try), 2 (on the second try), and 3 (on the third try). With each set of 3, there is a multiplier given to the bet (A set of 1's is x10, a set of 2's is x20, a set of 3's is x50, a set of 4's is x250, a set of 5's is x2,500, a set of 6's is x5,000, and a set of 7's is x1,000,000). The money won or lost is displayed, followed by the amount of money currently in the Wallet class.
 
 The player is then asked if they would like to play again. If they say yes, they are prompted again on which game they'd like to play, or if they say no, the program stops entirely.
+=======
+
+
